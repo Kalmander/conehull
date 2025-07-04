@@ -25,4 +25,11 @@ res = points_on_left(
     np.array([0,4])
 )
 
-print(res)
+
+points = np.array([
+    [0, 0], [1, 1], [2, 0], [1, -1], 
+    [0, -2], [-1, -1], [-2, 0], [-1, 1]
+])
+hull = conehull(points)
+
+print(hull)
