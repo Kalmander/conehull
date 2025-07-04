@@ -1,0 +1,15 @@
+import numpy as np
+from hull import farthest_point
+
+res = farthest_point(
+    np.array([
+        [1, 1],
+        [2, 1],
+        [2, 3],
+        [1, 5],
+        [1, 7],
+    ]),
+    np.array([0,0]),
+    np.array([0,4])
+)
+print(res)
