@@ -1,17 +1,13 @@
 import numpy as np
+from typing import Optional, List
 
-def farthest_point(points, a, b):
+def farthest_point(
+        points: np.ndarray, 
+        a: np.ndarray, 
+        b: np.ndarray
+) -> Optional[np.ndarray]:
     """
     Find the point in points that's farthest from the line ab.
-
-    Args:
-        points (np.array): (number_of_points, n) numpy array
-        a (np.array): (n,) numpy array
-        b (np.array): (n,) numpy array
-
-    Returns:
-        np.array: (n,) numpy array representing the farthest point
-                       (or None if empty)
     """
     ab = b - a
     abs_ab = np.linalg.norm(ab)
@@ -20,10 +16,28 @@ def farthest_point(points, a, b):
 
     for p in points:
         ap = p - a
-        det = np.linalg.det(np.column_stack([ap, ab]))
-        dist = det / abs_ab
+        det = np.linalg.det(np.column_stack([ab, ap]))
+        dist = abs(det) / abs_ab
         if dist >= max_dist: 
             max_dist = dist
             farthest_point = p
 
     return farthest_point
+
+def points_on_left(
+        points: np.ndarray, 
+        a: np.ndarray, 
+        b: np.ndarray
+) -> List[np.ndarray]:
+    """
+        Find the points lying left of the directed line ab.
+    """
+    ab = b - a
+    left = []
+    for p in points:
+        ap = p - a
+        det = np.linalg.det(np.column_stack([ab, ap]))
+        if det > 1e-12:
+            left.append(p)
+    return left
+
