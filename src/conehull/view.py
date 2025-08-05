@@ -326,8 +326,8 @@ def _render_frame(frame, ax, points, figsize=None):
         
         # Plot cone hull points as scattered points
         if len(cone_hull) > 0:
-            ax.scatter(cone_hull[:, 0], cone_hull[:, 1], c='purple', s=120, 
-                      label='Cone hull points', zorder=8, edgecolors='darkmagenta', linewidth=1.5, marker='D')
+            ax.scatter(cone_hull[:, 0], cone_hull[:, 1], c='purple', s=100, 
+                      label='Cone hull points', zorder=8, edgecolors='darkmagenta', linewidth=1.5, marker='h')
     
     ax.set_title(frame['title'], fontsize=14, fontweight='bold')
     # ax.text(0.02, 0.98, frame['description'], transform=ax.transAxes, 

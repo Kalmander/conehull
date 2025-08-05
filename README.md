@@ -47,6 +47,21 @@ plot_hull(cone_hull, points, cone=cone, show_convex_hull=True,
 ```
 ![](img/conehull_comparison.jpg)
 
+## Samplers
+```python
+import numpy as np
+from conehull import conehull
+from conehull.sampler import sample_implicit_region
+
+F = lambda X, Y: X**2 + 2*Y**2 - 1
+pts = sample_implicit_region(F, n_samples=5000)
+
+cone_narrow = np.array([[-0.9, 0.2], [0.4, 0.9]]) # the cone will be normalized to unit vectors inside conehull 
+hull = conehull(pts, cone_narrow)
+plot_hull(hull, pts, cone=cone_narrow, show_convex_hull=True, save_path='elliptic_disk.jpg',
+                title=r"Elliptic Disk: $x^2 + 2y^2 \leq 1$")
+```
+![](img/conehull_comparison.jpg)
 
 ## Visualization Modes
 
