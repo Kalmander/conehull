@@ -1,18 +1,36 @@
 [project]
 name = "conehull"
-version = "1.0.0"
+version = "1.0.0.post3"
 authors = [
   { name="Tryggvi Kalman Jónsson", email="tryggvikalman@proton.me" },
 ]
-description = " This package uses the quickhull algorithm to find the convex hull of a point set, but with the added option of restricting the set of halfplanes we intersect over to only those with normals lying in a given convex cone."
+description = "2D convex hull algorithm with directional cone constraints and visualization tools."
 readme = "README.md"
 requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
-license = "GPL-3.0"
-license-files = ["LICEN[CS]E*"]
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+dependencies = [
+    "numpy>=1.18.0",
+    "matplotlib>=3.3.0",
+    "scipy>=1.6.0",
+    "scikit-image>=0.18.0",
+]
+keywords = [
+    "convex hull",
+    "computational geometry",
+    "quickhull",
+    "cone constraints",
+    "visualization",
+]
+
+
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
 
 [project.urls]
 Homepage = "https://github.com/Kalmander/conehull"

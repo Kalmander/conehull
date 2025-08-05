@@ -26,6 +26,6 @@ __all__ = [
 ]
 
 # Package metadata
-__version__ = "1.0.0"
+__version__ = "1.0.0.post3"
 __author__ = "Tryggvi Kalman Jónsson"
 __description__ = "2D convex hull algorithm with directional cone constraints and visualization tools" 
