@@ -14,11 +14,6 @@ but with the added option of restricting the set of halfplanes we intersect over
 ```python
 import numpy as np
 
-# Make conehull accessible
-import sys
-import os
-sys.path.append(os.path.dirname(os.getcwd()))
-
 from conehull import conehull
 from conehull.view import plot_hull
 
