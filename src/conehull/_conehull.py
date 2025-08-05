@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.spatial import ConvexHull
 from ._geometry import find_farthest_point, points_on_left
 from ._cone_intersection import compute_cone_hull_intersection
 
@@ -55,6 +56,13 @@ def quickhull(points, frame_callback=None):
     
     points = np.array(points)
     
+    # Use fast SciPy implementation when no animation callback is needed
+    if frame_callback is None:
+        hull = ConvexHull(points)
+        # Return hull vertices in order
+        return points[hull.vertices]
+    
+    # Use custom implementation for animation support
     if frame_callback:
         frame_callback('algorithm_start', {
             'points': points, 

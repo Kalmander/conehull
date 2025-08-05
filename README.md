@@ -110,3 +110,9 @@ cone_hull = conehull(points, cone=cone, cone_bounds=[[-10, -10], [10, 10]])
 - `_cone_intersection.py` - Transforms standard convex hulls into cone hulls by filtering halfplanes based on cone constraints. Computes intersections within configurable bounding boxes.
 - `view.py` - Visualization tools including step-by-step animations, interactive Jupyter widgets, and static plotting. Supports both automated playback and manual navigation of algorithm steps.
 - `sampler.py` - Generates test point datasets from mathematical functions. Supports parametric curves, implicit equations, and region sampling for creating diverse test cases.
+
+## Quickhull
+
+For animations, we use our own Quickhull implementation (pure Python) so we can show step-by-step execution; it’s intentionally simple but becomes slow on datasets with thousands of points.
+
+When no animation is needed, this package uses SciPy’s [`scipy.spatial.ConvexHull`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html), which wraps the [Qhull](https://github.com/qhull/qhull) library by C. Bradford Barber and Hannu Huhdanpaa. Barber, Dobkin, and Huhdanpaa introduced the widely used n-dimensional Quickhull in their 1996 ACM TOMS paper, *The Quickhull Algorithm for Convex Hulls*.
