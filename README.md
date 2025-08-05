@@ -61,7 +61,7 @@ hull = conehull(pts, cone_narrow)
 plot_hull(hull, pts, cone=cone_narrow, show_convex_hull=True, save_path='elliptic_disk.jpg',
                 title=r"Elliptic Disk: $x^2 + 2y^2 \leq 1$")
 ```
-![](img/conehull_comparison.jpg)
+![](img/elliptic_disk.jpg)
 
 ## Visualization Modes
 
