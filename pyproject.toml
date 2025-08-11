@@ -1,6 +1,6 @@
 [project]
 name = "conehull"
-version = "1.0.0.post3"
+version = "1.0.1"
 authors = [
   { name="Tryggvi Kalman Jónsson", email="tryggvikalman@proton.me" },
 ]
