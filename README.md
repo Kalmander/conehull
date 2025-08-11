@@ -3,6 +3,12 @@
 This package uses the quickhull algorithm to find the convex hull of a point set,
 but with the added option of restricting the set of halfplanes we intersect over to only those with normals lying in a given convex cone.
 
+```bash
+pip install conehull
+```
+```
+```
+
 ## Features
 
 - **Cone-Constrained Hull**: The cone feature computes the intersection of halfplanes whose outward normals lie between two specified direction vectors. This creates a larger (unbounded) region that contains the original convex hull.
