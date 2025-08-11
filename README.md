@@ -6,8 +6,6 @@ but with the added option of restricting the set of halfplanes we intersect over
 ```bash
 pip install conehull
 ```
-```
-```
 
 ## Features
 
