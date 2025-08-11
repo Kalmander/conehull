@@ -68,6 +68,7 @@ plot_hull(hull, pts, cone=cone, show_convex_hull=True, save_path='elliptic_disk.
 ![](img/elliptic_disk.jpg)
 
 ## Visualization Modes
+There are some demos here: https://github.com/Kalmander/conehull_demos
 
 ```python
 # Import visualization functions
